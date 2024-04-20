@@ -1,8 +1,14 @@
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar";
+
 function App() {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <h1>Test</h1>
-    </div>
+    <>
+      <NavBar />
+      <div className="flex flex-col justify-center items-center min-h-[calc(100vh-3rem)]">
+        <Outlet />
+      </div>
+    </>
   )
 }
 
