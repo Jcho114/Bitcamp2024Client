@@ -27,7 +27,7 @@ function Signup() {
   }
 
   return (
-    <div className="flex flex-col gap-6 justify-center items-center px-10 py-16 rounded w-fit bg-red-600">
+    <div className="flex text-white flex-col gap-6 justify-center items-center px-10 py-16 rounded w-fit bg-red-600">
       <h1 className="font-bold text-3xl">Sign Up</h1>
       <form className="flex flex-col gap-6 items-center" onSubmit={submitForm}>
         <label className="border-b">

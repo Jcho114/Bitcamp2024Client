@@ -12,7 +12,6 @@ function UserAvatar() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["userinfo"],
     queryFn: async () => {
-      console.log(token);
       return await UserAPI.getUserInfo(token);
     },
   });
@@ -28,7 +27,7 @@ function UserAvatar() {
   }
 
   if (error) {
-    return <h1 className="font-bold">Error</h1>;
+    dispatch(updateToken(""));
   }
 
   return (
