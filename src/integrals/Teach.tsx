@@ -29,6 +29,7 @@ interface AppointmentRequest {
   studentId: string;
   studentName: string;
   date: string;
+  time: string;
   request: string;
   tags: string[];
 }
@@ -60,13 +61,13 @@ function Appointments() {
   
   return (
     <div className="flex flex-col w-full items-center p-5 gap-4 overflow-y-auto">
-      {data.map((appointmentRequest: AppointmentRequest, index: number) => (
+      {data.length > 0 ? data.map((appointmentRequest: AppointmentRequest, index: number) => (
         <div
           key={index}
           className="flex flex-col gap-2 w-full items-start justify-center p-5 border-black border rounded"
         >
           <h1><span className="font-bold">Student Name:</span> {appointmentRequest.studentName}</h1>
-          <h1><span className="font-bold">Date Requested:</span> {appointmentRequest.date}</h1>
+          <h1><span className="font-bold">Date Requested:</span> {appointmentRequest.date} {appointmentRequest.time}</h1>
           <h1 className="font-bold">Request:</h1>
           <h1>"{appointmentRequest.request}"</h1>
           <h1 className="font-bold">Tags:</h1>
@@ -80,7 +81,7 @@ function Appointments() {
             Assist Student
           </button>
         </div>
-      ))}
+      )) : <h1>No appointments at the moment</h1>}
     </div>
   )
 }

@@ -10,7 +10,6 @@ import { useAppSelector } from "../redux/redux.hooks";
 import AppointmentAPI from "../api/AppointmentAPI";
 import { useNavigate } from "react-router-dom";
 import { IoIosCall } from "react-icons/io";
-import { toast } from "react-toastify";
 
 const socket = io("http://localhost:3001/teach", {
   autoConnect: true,
@@ -38,7 +37,7 @@ function Call() {
   const [stream, setStream] = useState<MediaStream>();
   const [me, setMe] = useState<string>("");
   const [receivingCall, setReceivingCall] = useState<boolean>();
-  const [caller, setCaller] = useState("");
+  const [_, setCaller] = useState("");
   const [callerSignal, setCallerSignal] = useState<string | Peer.SignalData>("");
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
