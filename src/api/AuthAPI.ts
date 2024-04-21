@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "./axios.config";
 
 interface LoginData {
   email: string;
@@ -15,7 +15,7 @@ interface SignUpData {
 
 async function login(data: LoginData) {
   try {
-    const response = await axios.post("/cors-proxy/auth/login", data);
+    const response = await api.post("/auth/login", data);
     return response.data.accessToken;
   } catch (e) {
     throw e;
@@ -24,7 +24,7 @@ async function login(data: LoginData) {
 
 async function signup(data: SignUpData) {
   try {
-    const response = await axios.post("/cors-proxy/auth/signup", data);
+    const response = await api.post("/auth/signup", data);
     return response.data.accessToken;
   } catch(e) {
     throw e;
