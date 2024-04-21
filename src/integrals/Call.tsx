@@ -11,7 +11,7 @@ import AppointmentAPI from "../api/AppointmentAPI";
 import { useNavigate } from "react-router-dom";
 import { IoIosCall } from "react-icons/io";
 
-const socket = io(`/cors-proxy/teach`, {
+const socket = io(`/cors-proxy/https://bitcamp2024server.onrender.com/teach`, {
   autoConnect: true,
 });
 

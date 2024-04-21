@@ -13,7 +13,7 @@
 
 [[redirects]]
   from = "/cors-proxy/*"
-  to = "https://bitcamp2024server.onrender.com"
+  to = ":splat"
   status = 200
   headers = {Access-Control-Allow-Origin = "*"}
 
