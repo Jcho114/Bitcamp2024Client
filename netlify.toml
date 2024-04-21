@@ -15,7 +15,6 @@
   from = "/cors-proxy/*"
   to = ":splat"
   status = 200
-  headers = {Access-Control-Allow-Origin = "*"}
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
