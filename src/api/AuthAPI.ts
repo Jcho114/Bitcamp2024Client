@@ -1,3 +1,4 @@
+import axios from "axios";
 import api from "./axios.config";
 
 interface LoginData {
@@ -15,7 +16,7 @@ interface SignUpData {
 
 async function login(data: LoginData) {
   try {
-    const response = await api.post("/auth/login", data);
+    const response = await axios.post("/cors-proxy/https://bitcamp2024server.onrender.com/auth/login", data);
     return response.data.accessToken;
   } catch (e) {
     throw e;
@@ -24,7 +25,7 @@ async function login(data: LoginData) {
 
 async function signup(data: SignUpData) {
   try {
-    const response = await api.post("/auth/signup", data);
+    const response = await axios.post("/cors-proxy/https://bitcamp2024server.onrender.com/auth/signup", data);
     return response.data.accessToken;
   } catch(e) {
     throw e;
