@@ -22,7 +22,7 @@ function Signup() {
       dispatch(updateToken(token));
       navigate("/");
     } catch (e) {
-      toast.error("Unable to login");
+      toast.error("Unable to signup");
     }
   }
 
