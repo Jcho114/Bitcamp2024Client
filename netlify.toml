@@ -6,10 +6,14 @@
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
 
 [[redirects]]
   from = "/cors-proxy/*"
-  to = ":splat"
+  to = "https://bitcamp2024server.onrender.com/:splat"
   status = 200
 
   ## (optional) Settings for Netlify Dev

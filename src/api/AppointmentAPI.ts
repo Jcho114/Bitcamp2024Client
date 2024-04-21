@@ -1,5 +1,4 @@
 import { toast } from "react-toastify";
-import api from "./axios.config";
 import axios from "axios";
 
 interface CreateAppointmentData {
@@ -14,7 +13,7 @@ async function createAppointmentRequest(data: CreateAppointmentData, token: stri
       ...data,
       date: new Date().toISOString(),
     }
-    const response = await axios.post("/cors-proxy/https://bitcamp2024server.onrender.com/appointments/create", updatedData, {
+    const response = await axios.post("/cors-proxy/appointments/create", updatedData, {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -27,7 +26,7 @@ async function createAppointmentRequest(data: CreateAppointmentData, token: stri
 
 async function getAppointmentRequests(token: string) {
   try {
-    const response = await axios.get("/cors-proxy/https://bitcamp2024server.onrender.com/appointments/", {
+    const response = await axios.get("/cors-proxy/appointments/", {
       headers: {
         "Authorization": `Bearer ${token}`
       }
