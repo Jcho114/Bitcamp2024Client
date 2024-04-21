@@ -4,7 +4,7 @@ const Contact = () => {
   // State to manage whether the form has been submitted
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault(); // Prevent the form from submitting in the traditional way
     setSubmitted(true); // Update the state to indicate the form has been submitted
   };

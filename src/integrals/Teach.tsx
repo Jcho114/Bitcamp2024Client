@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import PulseLoader from "react-spinners/PulseLoader";
 import AppointmentAPI from "../api/AppointmentAPI";
 import { useAppSelector } from "../redux/redux.hooks";
@@ -8,8 +7,6 @@ import { updateAppointment } from "../redux/appointmentSlice";
 import { useNavigate } from "react-router-dom";
 
 function Teach() {
-  const [query, setQuery] = useState({});
-
   return(
     <div className="flex flex-col items-center gap-4">
       <h1 className="font-bold text-4xl">Teaching Panel</h1>
