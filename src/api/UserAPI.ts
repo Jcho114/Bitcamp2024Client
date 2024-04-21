@@ -16,7 +16,7 @@ async function getUserInfo(token: string) {
     });
     return response.data as UserInfo;
   } catch (e) {
-    toast.error("unable to get user info");
+    toast.error("Unable to get user info");
   }
 }
 
