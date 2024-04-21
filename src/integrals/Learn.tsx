@@ -4,6 +4,7 @@ import AppointmentAPI from "../api/AppointmentAPI";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/redux.hooks";
 import { updateAppointment } from "../redux/appointmentSlice";
+import { toast } from "react-toastify";
 
 const tagInfoDefault = hardcodedTags.map(tag => {
   return {
@@ -50,14 +51,18 @@ function Learn() {
   }
 
   async function handleSubmitClick() {
-    const { id: roomId } = await AppointmentAPI.createAppointmentRequest({
-      tags: tagInfo.filter(tag => tag.selected).map(tag => tag.tag),
-      request: request
-    }, token);
-
-    dispatch(updateAppointment([roomId, "STUDENT"]));
-
-    navigate("/call");
+    const selectedTags = tagInfo.filter(tag => tag.selected).map(tag => tag.tag);
+    if (selectedTags) {
+      const { id: roomId } = await AppointmentAPI.createAppointmentRequest({
+        tags: tagInfo.filter(tag => tag.selected).map(tag => tag.tag),
+        request: request
+      }, token);
+      
+      dispatch(updateAppointment([roomId, "STUDENT"]));
+      navigate("/call");
+    } else {
+      toast.error("You need to select at least one tag");
+    }
   }
 
   return(

@@ -54,6 +54,12 @@ export function ThreadContent() {
   return (
     <div className="flex flex-col break-all w-[40vw] my-[10vh] items-center justify-center p-5 gap-4 overflow-y-auto">
       <h1 className="font-bold text-3xl">Threads</h1>
+      <button
+        className="border border-black rounded px-2 py-1 hover:bg-gray-200"
+        onClick={() => navigate("/threads/create")}
+      >
+        Create Thread
+      </button>
       {data.length > 0 ? data.map((thread: Thread, index: number) => (
         <div
           key={index}
@@ -73,12 +79,6 @@ export function ThreadContent() {
           <h1><span className="font-bold">Posted by:</span> {thread.author.name}</h1>
         </div>
       )): <h1>No threads at the moment</h1>}
-      <button
-        className="border border-black rounded px-2 py-1 hover:bg-gray-200"
-        onClick={() => navigate("/threads/create")}
-      >
-        Create Thread
-      </button>
     </div>
   )
 }
