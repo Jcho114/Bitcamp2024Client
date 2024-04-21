@@ -185,13 +185,17 @@ function Call() {
   function handleMessageInput(e: { keyCode: number; shiftKey: boolean; preventDefault: () => void; }) {
     if (e.keyCode == 13 && e.shiftKey == false) {
       e.preventDefault();
+      if (messageContent === "/clear") {
+        setMessages([]);
+      } else {
+        setMessages([...messages, { name: data?.name || "dummy", content: messageContent }]);
+        socket.emit("message", {
+          roomId: appointment[0],
+          name: data?.name,
+          content: messageContent
+        });
+      }
       setMessageContent("");
-      setMessages([...messages, { name: data?.name || "dummy", content: messageContent }]);
-      socket.emit("message", {
-        roomId: appointment[0],
-        name: data?.name,
-        content: messageContent
-      });
     }
   }
 

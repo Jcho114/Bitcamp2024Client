@@ -1,7 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import './Home.css'; // Importing regular CSS
 import BannerImage from "/banner.png";
+import { useAppSelector } from '../redux/redux.hooks';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const token = useAppSelector(state => state.token.value);
+
   return (
     <div className="home-container">
       <div className="home-banner-container">
@@ -14,7 +19,13 @@ const Home = () => {
           <p className="primary-text">
           Teach, learn & earn through peer-to-peer tutoring and open discussions  
           </p>
-          <button className="secondary-button">
+          <button className="secondary-button" onClick={() => {
+            if (token) {
+              navigate("/learn");
+            } else {
+              navigate("/login");
+            }
+          }}>
             Start Learning Today!
           </button>
         </div>

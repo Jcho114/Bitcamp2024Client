@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from './App.tsx';
 import './index.css';
 import Threads, { ThreadContent, ThreadCreate, ThreadPage } from './integrals/Threads.tsx';
-import About from './integrals/About.tsx';
 import Teach from './integrals/Teach.tsx';
 import Learn from './integrals/Learn.tsx';
 import Login from './integrals/Login.tsx';
@@ -46,7 +45,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 <Route path="/call" element={<Call />} />
                 <Route path="/learn" element={<Learn />} />
               </Route>
-              <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Route>

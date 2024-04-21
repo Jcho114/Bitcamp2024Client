@@ -14,9 +14,6 @@ function NavBar() {
       </div>
       </Link>
       <div className="flex px-4 gap-6">
-        <Link to="/about">
-          <h1 className="font-bold">About</h1>
-        </Link>
         {
           token ?
           <>

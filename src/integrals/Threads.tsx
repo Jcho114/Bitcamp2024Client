@@ -16,6 +16,7 @@ interface Reply {
 }
 
 interface Thread {
+  id: string;
   title: string;
   author: {
     name: string
@@ -51,11 +52,25 @@ export function ThreadContent() {
   }
   
   return (
-    <div className="flex flex-col w-full items-center p-5 gap-4 overflow-y-auto">
+    <div className="flex flex-col break-all w-[40vw] my-[10vh] items-center justify-center p-5 gap-4 overflow-y-auto">
       <h1 className="font-bold text-3xl">Threads</h1>
       {data.length > 0 ? data.map((thread: Thread, index: number) => (
-        <div key={index}>
-          <h1>{thread.title}</h1>
+        <div
+          key={index}
+          className="flex cursor-pointer gap-2 flex-col border border-black p-4 rounded-md justify-center items-start w-full"
+          onClick={() => navigate(`/threads/thread/${thread.id}`)}  
+        >
+          <div className="flex items-center gap-4 w-full">
+            <Avatar
+              name={thread.author.name}
+              round={true}
+              size="34"
+              textSizeRatio={2}
+              maxInitials={2}
+            />
+            <h1 className="font-bold">{thread.title}</h1>
+          </div>
+          <h1><span className="font-bold">Posted by:</span> {thread.author.name}</h1>
         </div>
       )): <h1>No threads at the moment</h1>}
       <button

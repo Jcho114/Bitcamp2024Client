@@ -81,7 +81,7 @@ function Appointments() {
             Assist Student
           </button>
         </div>
-      )) : <h1>No appointments at the moment</h1>}
+      )) : <h1>No appointments at the moment...</h1>}
     </div>
   )
 }

@@ -31,7 +31,7 @@ function UserAvatar() {
   }
 
   return (
-    <div>
+    <div className="z-50 cursor-pointer">
       <Avatar
         name={data?.name}
         round={true}

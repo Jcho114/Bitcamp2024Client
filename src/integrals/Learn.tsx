@@ -64,7 +64,7 @@ function Learn() {
     <div className="flex items-center justify-center flex-col gap-4 w-[30rem]">
       <h1 className="text-6xl font-bold">Learn</h1>
       <textarea
-        className="focus:outline-none p-1 w-[100%] h-[20vh] block resize-none border-2 rounded border-black"
+        className="focus:outline-none p-3 w-[100%] h-[20vh] block resize-none border-2 rounded border-black"
         placeholder="What is your request?"
         value={request}
         onChange={handleSearchChange}
