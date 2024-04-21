@@ -10,11 +10,13 @@
   from = "/*"
   to = "/"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/cors-proxy/*"
   to = "https://bitcamp2024server.onrender.com/:splat"
   status = 200
+  force = true
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
