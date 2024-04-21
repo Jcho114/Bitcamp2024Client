@@ -8,9 +8,8 @@
   ## Not needed for static site generators.
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/index.html"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/cors-proxy/*"
