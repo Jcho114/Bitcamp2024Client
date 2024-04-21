@@ -11,10 +11,10 @@
   to = "/"
   status = 200
 
-[[headers]]
-for = “/"
-[headers.values]
-Access-Control-Allow-Origin = "”
+[[redirects]]
+  from = "/api/*"
+  to = "https://bitcamp2024server.onrender.com"
+  status = 200
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
