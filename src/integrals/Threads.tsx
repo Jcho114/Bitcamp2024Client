@@ -225,7 +225,7 @@ export function ThreadPage() {
           <div key={index}>
             <div className="flex items-center gap-3">
               <Avatar
-                name={threadData.author.name}
+                name={reply.author.name}
                 round={true}
                 size="34"
                 textSizeRatio={2}
