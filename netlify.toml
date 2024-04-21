@@ -11,6 +11,11 @@
   to = "/"
   status = 200
 
+[[headers]]
+for = “/"
+[headers.values]
+Access-Control-Allow-Origin = "”
+
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
   #[dev]
