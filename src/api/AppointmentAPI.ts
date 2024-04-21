@@ -8,7 +8,7 @@ interface CreateAppointmentData {
 
 async function createAppointmentRequest(data: CreateAppointmentData, token: string) {
   try {
-    console.log(new Date().getDate(), new Date().getTime());
+    // console.log(new Date().getDate(), new Date().getTime());
     const updatedData = {
       ...data,
       date: new Date().toISOString(),

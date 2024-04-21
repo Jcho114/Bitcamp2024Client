@@ -56,7 +56,7 @@ function Call() {
   }
 
   useEffect(() => {
-    console.log(appointment);
+    // console.log(appointment);
 
     if (!appointment[0]) {
       navigate("/");
@@ -72,7 +72,7 @@ function Call() {
 
     if (appointment[1] === "STUDENT") {
       socket.on("getFrom", (id: string) => {
-        console.log("getFrom", me);
+        // console.log("getFrom", me);
         socket.emit("sendFrom", {
           from: me,
           to: id,
@@ -81,7 +81,7 @@ function Call() {
 
       socket.on("callUser", (data: { from: string, name: string, signal: string | Peer.SignalData }) => {
         setReceivingCall(true);
-        console.log("callUser", data);
+        // console.log("callUser", data);
         setCaller(data.from);
         setName(data.name);
         setCallerSignal(data.signal);
@@ -123,7 +123,7 @@ function Call() {
     });
     
     peer.on("signal", (data) => {
-      console.log("signal me", me);
+      // console.log("signal me", me);
       socket.emit("callUser", {
         roomId: appointment[0],
         signal: data,
