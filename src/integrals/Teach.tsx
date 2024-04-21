@@ -12,11 +12,12 @@ function Teach() {
 
   return(
     <div className="flex flex-col items-center gap-4">
-      <h1 className="font-bold text-3xl">Teaching Panel</h1>
-      <div className="flex w-[90vw] h-[75vh] px-10 items-center justify-center">
-        <div className="flex flex-col bg-gray-200 w-[25%] h-[100%]">
+      <h1 className="font-bold text-4xl">Teaching Panel</h1>
+      <div className="flex w-[90vw] border-black border h-[70vh] items-center justify-center">
+        <div className="flex flex-col justify-center border-r border-black items-center bg-gray-400 w-[25%] h-[100%]">
+          <h1 className="font-bold text-lg">Appointment Requests</h1>
         </div>
-        <div className="flex flex-col bg-gray-400 w-[70%] h-[100%] items-center justify-center">
+        <div className="flex flex-col bg-gray-200 w-[75%] h-[100%] items-center justify-center">
           <Appointments />
         </div>
       </div>
@@ -64,7 +65,7 @@ function Appointments() {
       {data.length > 0 ? data.map((appointmentRequest: AppointmentRequest, index: number) => (
         <div
           key={index}
-          className="flex flex-col gap-2 w-full items-start justify-center p-5 border-black border rounded"
+          className="flex flex-col gap-2 w-full items-start bg-gray-200 justify-center p-5 border-black border rounded"
         >
           <h1><span className="font-bold">Student Name:</span> {appointmentRequest.studentName}</h1>
           <h1><span className="font-bold">Date Requested:</span> {appointmentRequest.date} {appointmentRequest.time}</h1>
@@ -72,10 +73,10 @@ function Appointments() {
           <h1>"{appointmentRequest.request}"</h1>
           <h1 className="font-bold">Tags:</h1>
           <div className="flex gap-1">
-            {appointmentRequest.tags.map((tag, index) => <div className="px-2 bg-white border-none rounded-md" key={index}>{tag}</div>)}
+            {appointmentRequest.tags.map((tag, index) => <div className="px-2 bg-gray-300 border-black border rounded-md" key={index}>{tag}</div>)}
           </div>
           <button
-            className="border border-black px-2 py-1 rounded-md mt-2"
+            className="border border-black bg-gray-300 px-2 py-1 rounded-md mt-2"
             onClick={() => handleAssistClick(appointmentRequest.id)}
           >
             Assist Student
