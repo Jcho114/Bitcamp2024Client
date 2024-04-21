@@ -12,7 +12,7 @@
   status = 200
 
 [[redirects]]
-  from = "/api/*"
+  from = "/cors-proxy/*"
   to = "https://bitcamp2024server.onrender.com"
   status = 200
   headers = {Access-Control-Allow-Origin = "*"}
