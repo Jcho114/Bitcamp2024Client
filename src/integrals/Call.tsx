@@ -11,7 +11,7 @@ import AppointmentAPI from "../api/AppointmentAPI";
 import { useNavigate } from "react-router-dom";
 import { IoIosCall } from "react-icons/io";
 
-const socket = io("http://localhost:3001/teach", {
+const socket = io(`${import.meta.env.BASE_URL}/teach`, {
   autoConnect: true,
 });
 
