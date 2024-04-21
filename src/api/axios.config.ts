@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.SERVER_URL,
+  baseURL: "https://bitcamp2024server.onrender.com",
 });
 
 export default api;
